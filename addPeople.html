@@ -5,12 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>Add People Page</title>
+
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+        }
+        h1, h4 {
+            text-align: center;
+        }
+        .container {
+            justify-content: center;
+            margin-left: 35%;
+        }
+        .text-end {
+            margin-top: 5%;
+            margin-right: 69.2%;
+        }
+        .card {
+            margin-top: 1%;
+        }
+        .container2 {
+            justify-content: center;
+            margin-left: 35.8%;
+        }
+        #inputSection {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>People</h1>
     <h4>Start by adding some people in the list below.</h4>
 
-    
+    <div class="container">
+        <div class="text-end"><button type="button" class="btn btn-primary btn-lg" onclick="addPeople()">ADD</button></div>
+        <div class="card" style="width: 25rem;">
+            <div class="card-header">
+            People
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">Steven Universe</li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container2" id="inputSection">
+        <div class="card" style="width: 25rem;">
+            <div class="firstname1">
+                <p>First Name</p>
+                <input id="firstname" type="text" placeholder="First Name">
+            </div>
+            <div class="lastname1">
+                <p>Last Name</p>
+                <input id="lastname" type="text" placeholder="Last Name">
+            </div>
+            <div class="buttons">
+                <button id="cancel" type="button" class="btn btn-primary btn-lg" onclick="hideInput()">Cancel</button>
+                <button id="save" type="button" class="btn btn-primary btn-lg" onclick="savePeople()">Save</button>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        let list = document.getElementById('list-group');
+        let inputSection = document.querySelector('inputSection');
+
+        function savePeople(){
+            let firstname = document.getElementById('firstname').value;
+            let lastname = document.getElementById('lastname').value;
+            let putName = document.createElement('li');
+            putName.appendChild(document.createTextNode(firstname + ' ' + lastname));
+            list.appendChild(putName);
+            return false;
+        }
+
+        function hideInput() {
+            inputSection.style.display = "none";
+        }
+
+        function addPeople() {
+
+        }
+    </script>
 </body>
 </html>
