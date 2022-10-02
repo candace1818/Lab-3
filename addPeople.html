@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
     <title>Add People Page</title>
 
     <style>
@@ -29,14 +31,32 @@
         .container2 {
             justify-content: center;
             margin-left: 35.8%;
+            margin-top: 3%;
+        }
+        #firstname {
+            width: 70%;
+        }
+        #last {
+            margin-top: 3%;
+        }
+        #lastname {
+            width: 70%;
         }
         #inputSection {
             display: none;
         }
+        #cancel {
+            margin-top: 6%;
+            margin-left: 60%;
+            background-color: #F7CECC;
+        }
+        #save {
+            margin-top: 6%;
+        }
     </style>
 </head>
 <body>
-    <h1>People</h1>
+    <h1>Persons List</h1>
     <h4>Start by adding some people in the list below.</h4>
 
     <div class="container">
@@ -45,10 +65,11 @@
             <div class="card-header">
             People
             </div>
-            <ul class="list-group">
+            <ul class="list-group" id="listPeople">
                 <li class="list-group-item">Steven Universe</li>
-                <li class="list-group-item"></li>
-                <li class="list-group-item"></li>
+                <li class="list-group-item">Rose Quartz</li>
+                <li class="list-group-item">Lapis Lazuli</li>
+            
             </ul>
         </div>
     </div>
@@ -60,35 +81,40 @@
                 <input id="firstname" type="text" placeholder="First Name">
             </div>
             <div class="lastname1">
-                <p>Last Name</p>
+                <p id="last">Last Name</p>
                 <input id="lastname" type="text" placeholder="Last Name">
             </div>
             <div class="buttons">
-                <button id="cancel" type="button" class="btn btn-primary btn-lg" onclick="hideInput()">Cancel</button>
+                <button id="cancel" type="button" class="btn btn-lg border-danger" onclick="hideInput()">Cancel</button>
                 <button id="save" type="button" class="btn btn-primary btn-lg" onclick="savePeople()">Save</button>
             </div> 
         </div>
     </div>
 
     <script>
-        let list = document.getElementById('list-group');
-        let inputSection = document.querySelector('inputSection');
+        let list = document.getElementById('listPeople');
+        let inputSection = document.querySelector('#inputSection');
 
-        function savePeople(){
-            let firstname = document.getElementById('firstname').value;
-            let lastname = document.getElementById('lastname').value;
-            let putName = document.createElement('li');
-            putName.appendChild(document.createTextNode(firstname + ' ' + lastname));
-            list.appendChild(putName);
-            return false;
+        // add button
+        function addPeople() {
+            inputSection.style.display = "block";
         }
 
+        // cancel button
         function hideInput() {
             inputSection.style.display = "none";
         }
 
-        function addPeople() {
-
+        // save button
+        function savePeople() {
+            let firstname = document.getElementById('firstname').value;
+            let lastname = document.getElementById('lastname').value;
+            let li = document.createElement('li');
+            li.className = 'list-group-item';
+            let names = firstname + ' ' + lastname;
+            li.appendChild(document.createTextNode(names));
+            list.appendChild(li);
+            return false;
         }
     </script>
 </body>
