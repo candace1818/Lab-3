@@ -4,3 +4,5 @@
     - This is where the user will put their username and password befor logging in.
 2. Next is addPeople.html
     - This is where we can add people on the list provided.
+   
+Note: I will still update/put my previous laboratory soon.
