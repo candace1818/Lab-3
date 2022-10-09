@@ -11,6 +11,15 @@
     <style>
         body {
             font-family: 'Oswald', sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(https://r4.wallpaperflare.com/wallpaper/417/175/819/digital-art-sunset-sword-fantasy-art-wallpaper-9920d87dc1faad7bd647a87ff001562d.jpg);
+            height: 100vh;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+        h1 {
+            color: yellow;
+            text-align: center;
         }
         #text {
             margin-top: 10%;
@@ -18,7 +27,7 @@
         div {
             margin-top: 10px;
         }
-        .container {
+        .container-fluid {
             justify-content: center;
             margin-left: 35%;
         }
@@ -53,31 +62,33 @@
     </style>
 </head>
 <body>
-    <h1 class="text-center" id="text">Log In</h1>
-    <div class="container">
-        <div class="card text-center" style="width: 25rem;">
-            <div class="card border-success mb-3" style="max-width: 25rem;">
-                <div class="card-header bg-transparent border-success">User Icon</div>
-                        <div id="info1">
-                            <input class="bg-transparent" id="username" type="text" placeholder="Username">
-                        </div>
-                        
-                        <div id="secret">
-                            <input class="bg-transparent" id="password" type="password" placeholder="Password">
-                        </div>
+    <h1 id="text">Log In</h1>
+    <div class="container-fluid">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="card text-center" style="width: 25rem;">
+                <div class="card border-success mb-3" style="max-width: 25rem;">
+                    <div class="card-header bg-transparent border-success">User Icon</div>
+                            <div id="info1">
+                                <input class="bg-transparent" id="username" type="text" placeholder="Username">
+                            </div>
+                            
+                            <div id="secret">
+                                <input class="bg-transparent" id="password" type="password" placeholder="Password">
+                            </div>
 
-                        <div id="clickButton">
-                            <input class="bg-primary text-light" id="button" type="button" value="Log In" onclick="logIn()">
-                        </div>
+                            <div id="clickButton">
+                                <input class="bg-primary text-light" id="button" type="button" value="Log In" onclick="logIn()">
+                            </div>
 
-                        <div id="result1">
-                            Username Note:
-                        </div>
+                            <div id="result1">
+                                Username Note:
+                            </div>
 
-                        <div id="result2">
-                            Password Note:
-                        </div>
-                <div class="card-footer bg-grey border-success"><a href="#">Forgot Password?</a></div> 
+                            <div id="result2">
+                                Password Note:
+                            </div>
+                    <div class="card-footer bg-grey border-success"><a href="#">Forgot Password?</a></div> 
+                </div>
             </div>
         </div>
     </div> 

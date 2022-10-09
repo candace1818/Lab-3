@@ -1,16 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta charset="UTF-8">   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
     <title>HOME</title>
 
     <style>
-        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-dark .navbar-brand {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .navbar-dark .navbar-brand span {
+            background: yellow;
+            color: #000;
+            padding: 5px;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+        }
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(https://r4.wallpaperflare.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-9b468c3dc3116f4905f43bc9cddc0cf0.jpg);
+            height: 100vh;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .banner-text p {
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        .banner-btn a {
+            border: 1px solid #fff;
+            border-radius: 50px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 50px;
+            display: inline-block;
+            margin-top: 15px;
+            color: #fff;
+            transition: all .6s;
+        }
+        .banner-btn a:hover {
+            background: yellow;
+            color: #000;
+        }
+        .text-area {
+            font-size: 70px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: yellow;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .navbar-dark {
+                background-color: #333;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                background: #333;
+                text-align: center;
+            }
+            .text-area {
+                font-size: 50px;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .banner-text p {
+                display: none;
+            }
+            .navbar-dark {
+                background-color: #333;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                background: #333;
+                text-align: center;
+            }
+            .text-area {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Yellow<span>Magazine</span></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">News</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">People</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Videos</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header>
+		<div class="container">
+			<div class="banner-text">
+				<div class="text-area">
+					Add List
+				</div>
+				<p>Where we can able to add some people on your list.</p>
+				<p class="banner-btn"><a href="logIn.html">LOG IN</a></p>
+			</div>
+		</div>
+	</header>
     
+    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script> 
 </body>
 </html>

@@ -13,25 +13,30 @@
     <style>
         body {
             font-family: 'Oswald', sans-serif;
+            padding: 5%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(https://r4.wallpaperflare.com/wallpaper/417/175/819/digital-art-sunset-sword-fantasy-art-wallpaper-9920d87dc1faad7bd647a87ff001562d.jpg);
+            height: 100vh;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
         }
         h1, h4 {
+            color: yellow;
             text-align: center;
         }
         .container {
-            justify-content: center;
-            margin-left: 35%;
+            justify-content: center;  
+            font-size: 20px;
         }
-        .text-end {
+        #addMe {
             margin-top: 5%;
-            margin-right: 69.2%;
         }
         .card {
             margin-top: 1%;
         }
         .container2 {
             justify-content: center;
-            margin-left: 35.8%;
-            margin-top: 3%;
+            font-size: 20px;
         }
         #firstname {
             width: 70%;
@@ -59,35 +64,37 @@
     <h1>Persons List</h1>
     <h4>Start by adding some people in the list below.</h4>
 
-    <div class="container" id="listSection">
-        <div class="text-end"><button type="button" class="btn btn-primary btn-lg" onclick="addPeople()">ADD</button></div>
-        <div class="card" style="width: 25rem;">
-            <div class="card-header">
-            People
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="container" id="listSection">
+            <div class="text-end" id="addMe"><button type="button" class="btn btn-primary btn-lg" onclick="addPeople()">ADD</button></div>
+                <div class="card" style="width: 25rem;">
+                    <div class="card-header text-center">
+                    People
+                    </div>
+                    <ul class="list-group" id="listPeople">
+                        <li class="list-group-item">Steven Universe</li>
+                        <li class="list-group-item">Rose Quartz</li>
+                        <li class="list-group-item">Lapis Lazuli</li>
+                        
+                    </ul>
             </div>
-            <ul class="list-group" id="listPeople">
-                <li class="list-group-item">Steven Universe</li>
-                <li class="list-group-item">Rose Quartz</li>
-                <li class="list-group-item">Lapis Lazuli</li>
-            
-            </ul>
         </div>
-    </div>
 
-    <div class="container2" id="inputSection">
-        <div class="card" style="width: 25rem;">
-            <div class="firstname1">
-                <p>First Name</p>
-                <input class="bg-transparent" id="firstname" type="text" placeholder="First Name">
+        <div class="container2" id="inputSection">
+            <div class="card" style="width: 25rem;">
+                <div class="firstname1">
+                    <p>First Name</p>
+                    <input class="bg-transparent" id="firstname" type="text" placeholder="First Name">
+                </div>
+                <div class="lastname1">
+                    <p id="last">Last Name</p>
+                    <input class="bg-transparent" id="lastname" type="text" placeholder="Last Name">
+                </div>
+                <div class="buttons">
+                    <button id="cancel" type="button" class="btn btn-lg border-danger" onclick="hideInput()">Cancel</button>
+                    <button id="save" type="button" class="btn btn-primary btn-lg" onclick="savePeople()">Save</button>
+                </div> 
             </div>
-            <div class="lastname1">
-                <p id="last">Last Name</p>
-                <input class="bg-transparent" id="lastname" type="text" placeholder="Last Name">
-            </div>
-            <div class="buttons">
-                <button id="cancel" type="button" class="btn btn-lg border-danger" onclick="hideInput()">Cancel</button>
-                <button id="save" type="button" class="btn btn-primary btn-lg" onclick="savePeople()">Save</button>
-            </div> 
         </div>
     </div>
 
