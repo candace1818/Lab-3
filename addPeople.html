@@ -59,7 +59,7 @@
     <h1>Persons List</h1>
     <h4>Start by adding some people in the list below.</h4>
 
-    <div class="container">
+    <div class="container" id="listSection">
         <div class="text-end"><button type="button" class="btn btn-primary btn-lg" onclick="addPeople()">ADD</button></div>
         <div class="card" style="width: 25rem;">
             <div class="card-header">
@@ -94,14 +94,19 @@
     <script>
         let list = document.getElementById('listPeople');
         let inputSection = document.querySelector('#inputSection');
+        let listSection = document.querySelector('#listSection')
 
         // add button
         function addPeople() {
+            listSection.style.display = "none";
+
             inputSection.style.display = "block";
         }
 
         // cancel button
         function hideInput() {
+            listSection.style.display = "block";
+
             inputSection.style.display = "none";
         }
 
@@ -114,7 +119,10 @@
             let names = firstname + ' ' + lastname;
             li.appendChild(document.createTextNode(names));
             list.appendChild(li);
-            return false;
+            
+            listSection.style.display = "block";
+
+            inputSection.style.display = "none";
         }
     </script>
 </body>
